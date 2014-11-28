@@ -56,7 +56,7 @@ open test/local.html
 ```
 ### From github
 
-[Tests](https://jsstyles.github.com/jss/test)
+[Tests](https://jsstyles.github.com/jss-nested/test)
 
 ## License
 
