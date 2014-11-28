@@ -1,0 +1,27 @@
+{
+  "name": "jss-nested",
+  "description": "Nested selectors plugin for jss",
+  "version": "0.1.0",
+  "author": {
+    "name": "Oleg Slobodskoi",
+    "email": "oleg008@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jsstyles/jss-nested.git"
+  },
+  "keywords": [
+    "jss",
+    "plugin",
+    "nested",
+    "nesting"
+  ],
+  "engines": {},
+  "scripts": {},
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
