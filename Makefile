@@ -1,3 +1,7 @@
+build:
+	node_modules/.bin/xpkg .
+	node_modules/.bin/browserify -e ./index.js -o dist/index.js -s jssNested
+
 push:
 	git push origin master
 	git push origin master:gh-pages
@@ -6,4 +10,4 @@ push:
 publish: push
 	npm pu
 
-.PHONY: push publish
+.PHONY: build push publish

@@ -1,7 +1,7 @@
 {
   "name": "jss-nested",
   "description": "Nested selectors plugin for jss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Oleg Slobodskoi",
     "email": "oleg008@gmail.com"
@@ -25,6 +25,7 @@
     }
   ],
   "devDependencies": {
+    "browserify": "6.0.3",
     "qunitjs": "1.15.0",
     "xpkg": "0.2.0",
     "jss": "0.x"

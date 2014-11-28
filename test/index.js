@@ -1,6 +1,13 @@
 'use strict'
 
-QUnit.module('Nested rules plugin')
+QUnit.module('Nested rules plugin', {
+    setup: function () {
+        jss.use(jssNested)
+    },
+    teardown: function () {
+        jss.plugins.registry = []
+    }
+})
 
 test('nesting with space', function () {
     var ss = new jss.Stylesheet({
