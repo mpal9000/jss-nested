@@ -59,6 +59,23 @@ test('multi nesting in one selector', function () {
     equal(ss.toString(), 'a {\n  float: left;\n}\nab, ac {\n  float: left;\n}')
 })
 
+
+test('deep nesting', function () {
+    var ss = new jss.StyleSheet({
+        a: {
+            '&b': {
+                '&c': {
+                    float: 'left'
+                }
+            }
+        }
+    })
+    ok(ss.rules.a instanceof jss.Rule)
+    ok(ss.rules.ab instanceof jss.Rule)
+    ok(ss.rules.abc instanceof jss.Rule)
+    equal(ss.toString(), 'a {\n}\nab {\n}\nabc {\n  float: left;\n}')
+})
+
 test('addRules', function () {
     var ss = new jss.StyleSheet({
         a: {
