@@ -1,7 +1,7 @@
 {
     name: 'jss-nested',
     description: 'Nested selectors plugin for jss',
-    version: '0.1.5',
+    version: '0.1.6',
     author: {
         name: 'Oleg Slobodskoi',
         email: 'oleg008@gmail.com'
@@ -22,7 +22,7 @@
     overlay: {
         bower: {
             dependencies: {
-                jsstyles: '0.x'
+                jsstyles: '^1.0.0'
             }
         },
         npm: {
@@ -30,10 +30,10 @@
                 browserify: '6.0.3',
                 qunitjs: '1.15.0',
                 xpkg: '0.2.0',
-                jss: '0.x'
+                jss: '^1.0.0'
             },
             peerDependencies: {
-                jss: '0.x'
+                jss: '^1.0.0'
             }
         }
     }

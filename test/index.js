@@ -15,7 +15,7 @@ test('nesting with space', function () {
             float: 'left',
             '& b': {float: 'left'}
         }
-    })
+    }, {named: false})
     ok(ss.rules.a instanceof jss.Rule)
     ok(ss.rules['a b'] instanceof jss.Rule)
     equal(ss.toString(), 'a {\n  float: left;\n}\na b {\n  float: left;\n}')
@@ -27,7 +27,7 @@ test('nesting without space', function () {
             float: 'left',
             '&b': {float: 'left'}
         }
-    })
+    }, {named: false})
     ok(ss.rules.a instanceof jss.Rule)
     ok(ss.rules['ab'] instanceof jss.Rule)
     equal(ss.toString(), 'a {\n  float: left;\n}\nab {\n  float: left;\n}')
@@ -40,7 +40,7 @@ test('multi nesting', function () {
             '&b': {float: 'left'},
             '& c': {float: 'left'}
         }
-    })
+    }, {named: false})
     ok(ss.rules.a instanceof jss.Rule)
     ok(ss.rules.ab instanceof jss.Rule)
     ok(ss.rules['a c'] instanceof jss.Rule)
@@ -53,7 +53,7 @@ test('multi nesting in one selector', function () {
             float: 'left',
             '&b, &c': {float: 'left'}
         }
-    })
+    }, {named: false})
     ok(ss.rules.a instanceof jss.Rule)
     ok(ss.rules['ab, ac'] instanceof jss.Rule)
     equal(ss.toString(), 'a {\n  float: left;\n}\nab, ac {\n  float: left;\n}')
@@ -69,7 +69,7 @@ test('deep nesting', function () {
                 }
             }
         }
-    })
+    }, {named: false})
     ok(ss.rules.a instanceof jss.Rule)
     ok(ss.rules.ab instanceof jss.Rule)
     ok(ss.rules.abc instanceof jss.Rule)
@@ -81,7 +81,7 @@ test('addRules', function () {
         a: {
             height: '1px'
         }
-    }).attach()
+    }, {named: false}).attach()
 
     ss.addRules({
         b: {
