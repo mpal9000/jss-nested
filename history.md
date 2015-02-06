@@ -1,3 +1,7 @@
+## 0.1.7 / 2014-02-06
+
+- support nesting within a named rule
+
 ## 0.1.6 / 2014-01-31
 
 - update jss to 1.0

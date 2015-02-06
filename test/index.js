@@ -97,3 +97,16 @@ test('addRules', function () {
     equal(ss.element.sheet.rules[2].cssText, 'b c { height: 3px; }')
     ss.detach()
 })
+
+test('nesting in a namespaced rule', function () {
+    jss.Rule.uid = 0
+    var ss = new jss.StyleSheet({
+        a: {
+            float: 'left',
+            '& b': {float: 'left'}
+        }
+    })
+    ok(ss.rules['.jss-0'] instanceof jss.Rule)
+    ok(ss.rules['.jss-0 b'] instanceof jss.Rule)
+    equal(ss.toString(), '.jss-0 {\n  float: left;\n}\n.jss-0 b {\n  float: left;\n}')
+})

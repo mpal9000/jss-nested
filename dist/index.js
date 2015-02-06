@@ -16,7 +16,7 @@ module.exports = function (rule) {
     for (var prop in style) {
         if (prop[0] == '&') {
             var selector = prop.replace(regExp, rule.selector)
-            rule.addChild(selector, style[prop])
+            rule.addChild(selector, style[prop], {named: false})
             delete style[prop]
         }
     }
