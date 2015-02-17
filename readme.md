@@ -21,6 +21,9 @@ Put an `&` before a selector within a rule and it will be replaced by the parent
         },
         '&.selected, &.active': {
             border: '1px solid red'
+        },
+        '&:hover': {
+            background: 'blue'
         }
     }
 }
