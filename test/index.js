@@ -10,7 +10,7 @@ QUnit.module('Nested rules plugin', {
 })
 
 test('nesting with space', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             float: 'left',
             '& b': {float: 'left'}
@@ -22,7 +22,7 @@ test('nesting with space', function () {
 })
 
 test('nesting without space', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             float: 'left',
             '&b': {float: 'left'}
@@ -34,7 +34,7 @@ test('nesting without space', function () {
 })
 
 test('multi nesting', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             float: 'left',
             '&b': {float: 'left'},
@@ -48,7 +48,7 @@ test('multi nesting', function () {
 })
 
 test('multi nesting in one selector', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             float: 'left',
             '&b, &c': {float: 'left'}
@@ -61,7 +61,7 @@ test('multi nesting in one selector', function () {
 
 
 test('deep nesting', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             '&b': {
                 '&c': {
@@ -77,7 +77,7 @@ test('deep nesting', function () {
 })
 
 test('addRules', function () {
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             height: '1px'
         }
@@ -100,7 +100,7 @@ test('addRules', function () {
 
 test('nesting in a namespaced rule', function () {
     jss.Rule.uid = 0
-    var ss = new jss.StyleSheet({
+    var ss = jss.createStyleSheet({
         a: {
             float: 'left',
             '& b': {float: 'left'}
