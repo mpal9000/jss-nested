@@ -99,14 +99,14 @@ test('addRules', function () {
 })
 
 test('nesting in a namespaced rule', function () {
-    jss.Rule.uid = 0
+    jss.uid.reset()
     var ss = jss.createStyleSheet({
         a: {
             float: 'left',
             '& b': {float: 'left'}
         }
     })
-    ok(ss.rules['.jss-0'] instanceof jss.Rule)
-    ok(ss.rules['.jss-0 b'] instanceof jss.Rule)
-    equal(ss.toString(), '.jss-0 {\n  float: left;\n}\n.jss-0 b {\n  float: left;\n}')
+    ok(ss.rules['.jss-0-0'] instanceof jss.Rule)
+    ok(ss.rules['.jss-0-0 b'] instanceof jss.Rule)
+    equal(ss.toString(), '.jss-0-0 {\n  float: left;\n}\n.jss-0-0 b {\n  float: left;\n}')
 })
