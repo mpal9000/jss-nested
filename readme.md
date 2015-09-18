@@ -1,65 +1,86 @@
-## Nested selectors plugin for JSS
+![JSS logo](http://avatars1.githubusercontent.com/u/9503099?v=3&s=60)
 
-This plugin implements nested selectors for [jss](https://github.com/jsstyles/jss).
+## JSS plugin that enables support for nested selectors
 
-Take a look at [examples](http://jsstyles.github.io/jss-nested/examples/index.html) directory.
+Put an `&` before a selector within a rule and it will be
+replaced by the parent selector and extracted to
+a [separate rule](http://jsstyles.github.io/jss-examples/plugins/jss-nested/simple/index.html).
 
-Put an `&` before a selector within a rule and it will be replaced by the parent selector and extracted to a [separate rule](http://jsstyles.github.io/jss-nested/examples/simple/index.html).
+[Demo](http://jsstyles.github.io/jss-examples/index.html#plugin-jss-nested) -
+[JSS](https://github.com/jsstyles/jss)
 
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/jsstyles/jss?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+
+## Usage example
 
 ```javascript
-{
-    '.container': {
-        padding: '20px',
-        // Will result in .container.clear
-        '&.clear': {
-            clear: 'both'
-        },
-        // Will result in .container .button
-        '& .button': {
-            background: 'red'
-        },
-        '&.selected, &.active': {
-            border: '1px solid red'
-        },
-        '&:hover': {
-            background: 'blue'
-        }
+import jss from 'jss'
+import nested from 'jss-nested'
+
+jss.use(nested)
+
+const styleSheet = jss.createStyleSheet({
+  container: {
+    padding: '20px',
+    '&:hover': {
+      background: 'blue'
+    },
+    '&.clear': {
+      clear: 'both'
+    },
+    '& .button': {
+      background: 'red'
+    },
+    '&.selected, &.active': {
+      border: '1px solid red'
     }
-}
+  }
+})
+```
+
+```javascript
+console.log(styleSheet.toString())
 ```
 ```css
-.container {
-    padding: 20px;
+.jss-0-0 {
+  padding: 20px;
 }
-.container.clear {
-    clear: both;
+.jss-0-0:hover {
+  background: blue;
 }
-.container .button {
-    background: red;
+.jss-0-0.clear {
+  clear: both;
 }
-.container.selected, .container.active {
-    border: 1px solid red;
+.jss-0-0 .button {
+  background: red;
+}
+.jss-0-0.selected, .jss-0-0.active {
+  border: 1px solid red;
 }
 ```
-## Register plugin
 
 ```javascript
-var jss = require('jss')
-var nested = require('jss-nested')
-jss.use(nested)
+console.log(styleSheet.classes)
 ```
+```javascript
+{ container: "jss-0-0" }
+```
+
 
 ## Run tests
 
 ### Locally
+
 ```bash
 npm i
 open test/local.html
 ```
+
 ### From github
 
 [Tests](https://jsstyles.github.com/jss-nested/test)
+
 
 ## License
 
