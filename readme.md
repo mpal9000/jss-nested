@@ -74,7 +74,7 @@ console.log(styleSheet.classes)
 
 ```bash
 npm i
-open test/local.html
+open test/index.html
 ```
 
 ### From github
