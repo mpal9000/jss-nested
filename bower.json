@@ -21,6 +21,6 @@
   "license": "MIT",
   "main": "dist/jss-nested.js",
   "dependencies": {
-    "jsstyles": "^2.3.0"
+    "jsstyles": "^2.3.2"
   }
 }
